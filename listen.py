@@ -8,6 +8,7 @@
 
 import paho.mqtt.client as mqtt
 from db import sensor_Data_Handler
+import ssl
 
 # MQTT Settings 
 MQTT_Broker = "mqtt"
@@ -39,6 +40,8 @@ mqttc.on_connect = on_connect
 mqttc.on_subscribe = on_subscribe
 
 # Connect
+mqttc.tls_set("ca.crt", tls_version=ssl.PROTOCOL_TLSv1_2)
+mqttc.tls_insecure_set(True)
 mqttc.connect(MQTT_Broker, int(MQTT_Port), int(Keep_Alive_Interval))
 
 # Continue the network loop
