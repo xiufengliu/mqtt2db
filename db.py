@@ -39,7 +39,7 @@ def DHT22_Temp_Data_Handler(jsonData):
 	SensorID = json_Dict['Sensor_ID']
 	Data_and_Time = json_Dict['Date']
 	Temperature = json_Dict['Temperature']
-	
+
 	#Push into DB Table
 	dbObj = DatabaseManager()
 	dbObj.add_del_update_db_record("insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature) values (?,?,?)",[SensorID, Data_and_Time, Temperature])
@@ -54,7 +54,8 @@ def DHT22_Humidity_Data_Handler(jsonData):
 	SensorID = json_Dict['Sensor_ID']
 	Data_and_Time = json_Dict['Date']
 	Humidity = json_Dict['Humidity']
-	
+
+
 	#Push into DB Table
 	dbObj = DatabaseManager()
 	dbObj.add_del_update_db_record("insert into DHT22_Humidity_Data (SensorID, Date_n_Time, Humidity) values (?,?,?)",[SensorID, Data_and_Time, Humidity])
