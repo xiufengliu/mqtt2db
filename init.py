@@ -8,7 +8,7 @@ def create_tables():
         drop table if exists DHT22_Temperature_Data
         """,
         """ create table DHT22_Temperature_Data (
-              id integer primary key autoincrement,
+              id serial primary key,
               SensorID text,
               Date_n_Time text,
               Temperature text
@@ -19,7 +19,7 @@ def create_tables():
         """,
         """
         create table DHT22_Humidity_Data (
-              id integer primary key autoincrement,
+              id serial primary key,
               SensorID text,
               Date_n_Time text,
               Humidity text
