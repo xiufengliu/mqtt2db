@@ -10,7 +10,7 @@
 import paho.mqtt.client as mqtt
 import random, threading, json
 from datetime import datetime
-
+import ssl
 #====================================================
 # MQTT Settings 
 MQTT_Broker = "mqtt"
@@ -39,6 +39,9 @@ mqttc = mqtt.Client()
 mqttc.on_connect = on_connect
 mqttc.on_disconnect = on_disconnect
 mqttc.on_publish = on_publish
+
+mqttc.tls_set("ca.crt", tls_version=ssl.PROTOCOL_TLSv1_2)
+mqttc.tls_insecure_set(True)
 mqttc.connect(MQTT_Broker, int(MQTT_Port), int(Keep_Alive_Interval))		
 
 		
