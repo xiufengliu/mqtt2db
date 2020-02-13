@@ -14,7 +14,7 @@ from datetime import datetime
 #====================================================
 # MQTT Settings 
 MQTT_Broker = "mqtt"
-MQTT_Port = 1883
+MQTT_Port = 8883
 Keep_Alive_Interval = 45
 MQTT_Topic_Humidity = "Home/BedRoom/DHT22/Humidity"
 MQTT_Topic_Temperature = "Home/BedRoom/DHT22/Temperature"
